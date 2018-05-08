@@ -1,0 +1,411 @@
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+header{
+	.top-box{
+		background-color: #2e2b3e;
+		padding: 2px 0 7px;
+		overflow: hidden;
+
+		.user-menu{
+			text-align: right;
+
+			li{
+				display: inline-block;
+				vertical-align: middle;
+
+				.welcome{
+					margin-right: 5px;
+
+					em{
+						font-style: normal;
+						cursor: pointer;
+					}
+
+					.ajax-content-loader{
+						display: inline-block;
+
+						p{
+							@include font-size(1.0);
+							color: #fff;
+							text-transform: uppercase;
+						}
+					}
+				}
+
+				a{
+					@include font-size(1.0);
+					text-decoration: none;
+					color: #fff;
+					text-transform: uppercase;
+
+					&:hover{
+						@extend .transition;
+						color: #f8d057;
+					}
+				}
+
+				&:after{
+					content: "|";
+					margin: 0 5px;
+					display: inline-block;
+					color: #fff;
+				}
+
+				&:last-child{
+					&:after{
+						content: none;
+					}
+				}
+			}
+		}
+	}
+
+	.main-header{
+		padding-top: 10px;
+	    overflow: visible;
+	    height: 85px;
+
+	    .logo{
+	    	.logo-mob{
+	    		margin-top: 10px;
+	    	}
+	    }
+
+		.menu-header {
+			@extend .transition;
+			top: 100%;
+	        left: -100%;
+			float: left;
+			width: 100%;
+	        z-index: 9999;
+			position: absolute;
+
+		    @include mq($screen-md) {
+		    	left: 0;
+		    	opacity: 1;
+		    	display: inline-block;
+		    	position: relative;
+	    		padding: 20px 0 0;
+	    		background-color: transparent;
+	    		width: 50%;
+		    }
+
+		    .container{
+		    	position: relative;
+		    }
+
+		    ul{
+		    	li{
+		    		@extend .transition;
+		    		margin: 0;
+		    		position: relative;
+
+		    		@include mq($screen-md) {
+		    			position: initial;
+		    			display: inline-block;
+		    			vertical-align: middle;
+		    			margin-left: 1%;
+		    		}
+
+		    		a{
+		    			@include font-size(1.5);
+	    				color: #2e2b3e;
+	    				text-transform: uppercase;
+	    				text-decoration: none;
+	    				display: block;
+	    				padding: 15px 8px;
+	    				font-weight: 600;
+	    				border: 1px solid #fff;
+		    		}
+
+			    	&.magenta{
+	    				a{
+	    					color: #60083A;
+	    					font-weight: 900;
+	    				}
+	    			}
+
+			    	&.has-sub{
+			    		.js-open-sub{
+					    	top: 5px;
+					    	right: 0;
+					    	border: 0;
+					    	outline: none;
+					    	background: none;
+					    	position: absolute;
+
+					    	.menu-toggle{
+					    		width: 20px;
+					    		height: 20px;
+					    		display: block;
+					    		margin: 0 auto;
+					    		position: relative;
+					    		pointer-events: none;
+
+					    		@include mq($screen-sm) {
+					    			width: 25px;
+					    			height: 25px;
+					    		}
+
+					    		span {
+					    			@extend .transition;
+									left: 0;
+									opacity: 1;
+									height: 12%;
+									width: 100%;
+									display: block;
+									background: #fff;
+									position: absolute;
+									border-radius: 9px;
+									transform: rotate(0deg);
+									// transition: .25s ease-in-out;
+
+									&:nth-child(1) {
+									  top: 0px;
+									}
+
+									&:nth-child(2) {
+									  top: 9px;
+									}
+
+									&:nth-child(3) {
+									  top: 18px;
+									}
+
+								}
+					    	}
+
+					    	&.active{
+					    		.menu-toggle{
+					    			span{
+					    				&:nth-child(1) {
+											top: 9px;
+											transform: rotate(135deg);
+										}
+
+										&:nth-child(2) {
+											opacity: 0;
+											left: -60px;
+										}
+
+										&:nth-child(3) {
+											top: 9px;
+											transform: rotate(-135deg);
+										}
+					    			}
+					    		}
+					    	}
+					    }
+
+					    a.first-menu{
+	    					border: 1px solid #fff;
+
+					    }
+
+			    		.submenu{
+
+			    			@extend .transition;
+			    			height: 0;
+			    			opacity: 0;
+			    			padding: 0 15px;
+			    			overflow: hidden;
+			    			background: #f1f1f1;
+								pointer-events: all;
+
+								@include mq($screen-md) {
+									pointer-events: none;
+								}
+
+			    			a{
+			    				&:before{
+				    				margin-top: 9px;
+			    				}
+			    			}
+
+			    			@include mq($screen-md){
+				    			top: 0;
+				    			left: 0;
+				    			width: 100%;
+				    			z-index: -1;
+				    			height: auto;
+				    			margin-top: 0;
+				    			display: flex;
+				    			background: #fff;
+				    			overflow: visible;
+			    				position: absolute;
+				    			padding: 20px;
+				    			border: 1px solid #dbdbdb;
+
+				    			a{
+				    				margin-right: 0;
+
+				    				&:before{
+				    					display: none;
+				    				}
+				    			}
+				    		}
+
+				    		&.slideActive{
+				    			opacity: 1;
+				    			height: auto;
+				    			padding-top: 15px;
+				    			position: relative;
+				    			pointer-events: all;
+				    			padding-bottom: 15px;
+				    		}
+
+				    		nav{
+				    			width: 100%;
+
+			    				ul{
+			    					li{
+			    						clear: both;
+			    						width: 100%;
+			    						display: list-item;
+
+			    						a{
+				    						@include font-size(1.4);
+				    						@extend .transition;
+				    						padding: 0;
+				    						text-transform: none;
+				    						color: #999;
+				    						text-align: left;
+				    						text-transform: uppercase;
+				    						font-weight: normal;
+				    						display: inline-block;
+
+				    						&:before{
+				    							content: ">";
+				    							display: inline-block;
+				    							margin-right: 3px;
+				    						}
+
+				    						&:hover{
+				    							@extend .transition;
+				    							color: #f8d057;
+
+				    							&:before{
+					    							content: "//";
+					    							color: #f8d057;
+					    						}
+				    						}
+				    					}
+			    					}
+			    				}
+			    			}
+
+			    			.category-list,
+			    			.banner-submenu{
+			    				display: inline-block;
+			    				vertical-align: top;
+			    				width: 100%;
+
+			    				@include mq($screen-md){
+			    					width: 50%;
+			    				}
+			    			}
+
+			    			.banner-submenu{
+			    				img{
+			    					width: 100%;
+			    					height: auto;
+			    				}
+			    			}
+			    		}
+
+			    		&:hover{
+			    			a.first-menu{
+			    				border: 1px solid #dbdbdb;
+			    				border-bottom: none;
+			    				background-color: #fff;
+			    				z-index: 99999999999999;
+			    			}
+
+			    			.submenu{
+			    				opacity: 1;
+
+			    				@include mq($screen-md){
+			    					top: 65px;
+									pointer-events: all;
+			    				}
+			    			}
+			    		}
+			    	}
+		    	}
+		    }
+
+		    &.slideActive{
+				left: 0;
+				top: 80px;
+				opacity: 1;
+				background: #fff;
+		        border-top: 4px solid #2e2b3e;
+		        padding: 20px 20px 100px;
+		        overflow-y: auto;
+				overflow-x: hidden;
+
+		        ul{
+		        	li{
+		        		a{
+		        			@include font-size(1.4);
+		        			color: #000;
+		        			line-height: 20px;
+
+		        			&.first-menu{
+	        					@include font-size(1.8);
+	        					border: none !important;
+	        				}
+		        		}
+
+		        		&.has-sub{
+
+		        			a{
+		        				display: block;
+
+		        				&.first-menu{
+									&:after{
+										@include font-size(2.5);
+								    	content: "+";
+								    	float: right;
+								    	font-weight: bolder;
+								    }
+
+								    &.active{
+								    	&:after{
+								    		@include font-size(2.5);
+									    	content: "-";
+									    	float: right;
+									    	font-weight: bolder;
+									    }
+								    }
+			        			}
+		        			}
+
+		        			.submenu{
+		        				height: auto;
+		        				opacity: 1;
+		        				background-color: #fff;
+		        				display: none;
+
+		        				ul{
+		        					li{
+		        						a{
+		        							@include font-size(1.4);
+		        							padding-left: 20px;
+		        							line-height: 16px;
+		        							padding: 5px 5px 5px 20px;
+		        							display: block;
+		        							width: 100%;
+		        						}
+		        					}
+		        				}
+		        			}
+		        		}
+		        	}
+		        }
+		    }
+		}
+	}
+}

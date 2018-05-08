@@ -1,0 +1,15 @@
+@include make-grid-columns;
+
+@include make-grid(xs);
+
+@include mq($screen-sm) {
+  @include make-grid(sm);
+}
+
+@include mq($screen-md) {
+  @include make-grid(md);
+}
+
+@include mq($screen-lg) {
+  @include make-grid(lg);
+}

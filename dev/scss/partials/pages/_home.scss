@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Home
+   ========================================================================== */
+
+body.home{
+	.banners-top{
+		border-top: 1px solid #2e2b3e;
+
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.banners-secundarios,
+	.banners-bottom {
+		margin-top: 15px;
+		text-align: center;
+		overflow: hidden;
+		clear: both;
+
+		.row{
+			clear: both;
+		}
+
+		.box-banner {
+			width: 100%;
+			height: auto;
+			margin-bottom: 10px;
+			overflow: hidden;
+
+			img {
+			    width: 100%;
+			    height: auto;
+				-webkit-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+				-moz-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+				-ms-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+				-o-transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+				transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
+			}
+
+			&:hover{
+				img{
+					-webkit-transform: scale(1.1);
+					-moz-transform: scale(1.1);
+					-ms-transform: scale(1.1);
+					-o-transform: scale(1.1);
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+
+	.news-shelf{
+		overflow: hidden;
+		margin-bottom: 10px;
+
+		.banner-news{
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}

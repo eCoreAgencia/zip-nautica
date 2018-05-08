@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+	<meta charset='utf-8'>
+	<!-- Facebook sharing information tags -->
+	<meta property='og:title' content='*|MC:SUBJECT|*' />
+
+	<title>{{_accountInfo.TradingName}}</title>
+</head>
+<body leftmargin='0' marginwidth='0' topmargin='0' marginheight='0' offset='0'>
+	<center>
+		<table border='0' cellpadding='0' cellspacing='0' height='100%' width='100%' style='font-size:14px;'>
+			<tr>
+				<td align='center' valign='top'>
+					<table border='0' cellpadding='0' cellspacing='0' width='550'>
+						<tr>
+							<td align='center' valign='top'>
+								<!-- // Begin Template Body \\ -->
+								<table border='0' cellpadding='0' cellspacing='0' width='550'>
+                                    <tr>
+                                        <td style='width:100%; border-bottom:solid 2px #1a75ce;'>
+                                            <a href='http://{{_accountInfo.HostName}}.com.br' target='_blank' style='border:none;'>
+                                                <img src='http://zipnautica.vtexcommercestable.com.br/arquivos/header_mail.jpg' border='0' alt='{{_accountInfo.TradingName}}' style='border:none;' width="550" height="105" />
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr><td height="50"></td></tr>
+									<tr>
+										<td valign='top'>
+											<table border='0' cellspacing='0' width='100%'>
+												<!-- // Header content \\ -->
+												<tr>
+													<td valign='top'>
+														<p>Olá, <strong>{{orders.0.clientProfileData.firstName}}</strong>.</p>
+														<p>Obrigado por comprar na {{_accountInfo.TradingName}}. Todos os detalhes da compra encontram-se abaixo.</p>
+														<p><strong>Dados da compra realizada em {{formatDate orders.0.creationDate}}:</strong><p>
+													</td>
+												</tr>
+												<!-- // End Header content \\ -->
+												<!-- // Content Pagament\\ -->
+												<tr>
+													<td valign='top' style='padding-top: 0; padding-bottom: 0;'>
+														<table border='0' cellpadding='5' cellspacing='0' width='100%' style='border: 1px solid #F3F3F3;'>
+															<tr>
+																<th scope='col' valign='middle' width='30%' mc:edit='data_table_heading03' style='background-color: #F3F3F3;font-size:14px;'>Pagamento
+                                                                  </th>
+																<th scope='col' valign='middle' width='40%' mc:edit='data_table_heading01' style='background-color: #F3F3F3;font-size:14px;'>Endereço de entrega
+                                                                  </th>
+	                                                            <th scope='col' valign='middle' width='30%' mc:edit='data_table_heading01' style='background-color: #F3F3F3;font-size:14px;'>Valores
+	                                                              </th>
+															</tr>
+
+															<tr mc:repeatable>
+																<td valign='top' mc:edit='data_table_content03' style='font-size: 13px;'>
+																	{{#each orders.0.paymentData.payments}}
+																	<strong>{{paymentSystemName}}</strong><br />
+																	R$ {{formatCurrency value}} (à vista)
+																	{{/each}}
+                                                                  </td>
+																<td valign='top' mc:edit='data_table_content03' style='font-size: 13px;'>
+																	<strong>{{orders.0.shippingData.address.receiverName}}</strong><br />
+																	{{orders.0.shippingData.address.street}} - {{orders.0.shippingData.address.number}} - {{orders.0.shippingData.address.neighborhood}}<br />
+																	{{orders.0.shippingData.address.city}} - {{orders.0.shippingData.address.state}}<br />
+																	{{orders.0.shippingData.address.postalCode}}<br />
+																</td>
+																<td valign='top' mc:edit='data_table_content03' style='font-size: 13px;'>
+																	<table width='100%'>
+																	{{#each orders.0.totals}}
+																	<tr>
+																		<td><strong>{{name}}</strong></td>
+																		<td style='text-align: right'>R$ {{formatCurrency value}}</td>
+																	</tr>
+																	{{/each}}
+																	</table>
+                                                                  </td>
+															</tr>
+
+														</table>
+													</td>
+												</tr>
+
+												<tr>
+													<td valign='top'>
+														<p>
+															<strong>Pedido nº: {{orders.0.orderGroup}}</strong> -
+															Vendedor: [#] - 
+															Forma de entrega: <strong>{{orders.0.shippingData.logisticsInfo.0.selectedSla}}</strong>
+														</p>
+
+													</td>
+												</tr>
+												<tr>
+													<td valign='top'>
+														<table border='0' cellpadding='5' cellspacing='0' width='100%' style='border: 1px solid #F3F3F3;'>
+															<tr>
+																<th scope='col' valign='top' width='42%' mc:edit='data_table_heading00' style='background-color: #F3F3F3;font-size:14px;'>Produto
+                                                                  </th>
+																<th scope='col' valign='top' width='10%' mc:edit='data_table_heading01' style='background-color: #F3F3F3;font-size:14px;'>Entrega
+                                                                  </th>
+																<th scope='col' valign='top' width='14%' mc:edit='data_table_heading02' style='background-color: #F3F3F3;font-size:14px;'>Preço
+                                                                  </th>
+																<th scope='col' valign='top' width='15%' mc:edit='data_table_heading03' style='background-color: #F3F3F3;font-size:14px;'>Quantidade
+                                                                  </th>
+																<th scope='col' valign='top' width='14%' mc:edit='data_table_heading04' style='background-color: #F3F3F3;font-size:14px;'>Total
+                                                                  </th>
+															</tr>
+															{{#each orders.0.items}}
+															<tr mc:repeatable>
+																<td valign='top' mc:edit='data_table_content00'  style='font-size: 13px;'>{{name}}
+                                                                  </td>
+																<td valign='top' style='font-size: 13px;text-align:center;' mc:edit='data_table_content01'>
+Length: {{@parent.sellerOrderId}}
+																	
+																</td>
+																<td valign='top' style='font-size: 13px;text-align:center;' mc:edit='data_table_content02'>R$ {{formatCurrency price}}
+                                                                  </td>
+																<td valign='top' style='font-size: 13px;text-align:center;' mc:edit='data_table_content03'>{{quantity}}
+                                                                  </td>
+																<td valign='top' style='font-size: 13px;text-align:center;' mc:edit='data_table_content04'>
+																	<strong>R$ {{formatCurrency price}}</strong>
+																</td>
+															</tr>
+															{{/each}}
+														</table>
+													</td>
+												</tr>
+
+											</table>
+											<!-- // End Module: Standard Content \\ -->
+											<br />
+
+										</td>
+									</tr>
+								</table>
+								<!-- // End Template Body \\ -->
+							</td>
+						</tr>
+						<tr>
+							<td align='center' valign='top'>
+								<!-- // Begin Template Footer \\ -->
+								<table border='0' cellspacing='0' width='550' style='border-top: 3px solid #F2F2F2'>
+									<tr>
+										<td valign='top'>
+											<p>Você pode <a href='{{ordersUrl}}'>acompanhar seus pedidos no site</a> ou <a href='http://{{_accountInfo.HostName}}.com.br'>retornar à loja</a> para continuar suas compras e aproveitar nossas promoções.</p>
+											<p>Atenciosamente,<br />
+											Equipe {{_accountInfo.TradingName}}</p>
+										</td>
+									</tr>
+								</table>
+								<!-- // End Template Footer \\ -->
+							</td>
+						</tr>
+                        <tr><td height="70"></td></tr>
+                        <tr>
+                            <td style='width:100%; border-bottom:solid 2px #1a75ce;'>
+                                <a href='http://{{_accountInfo.HostName}}.com.br' target='_blank' style='border:none;'>
+                                    <img src='http://zipnautica.vtexcommercestable.com.br/arquivos/footer_mail.jpg' border='0' alt='{{_accountInfo.TradingName}}' style='border:none;' width="550" height="114" />
+                                </a>
+                            </td>
+                        </tr>
+					</table>
+					<br />
+				</td>
+			</tr>
+		</table>
+	</center>
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* ========================================================================
+	Menu Persistente
+	======================================================================= */
+	
+header {
+	&.menu-persistente {
+		@extend .transition;
+		top: 0;
+		left: 0;
+		width: 100%;
+		position: fixed;
+		min-height: 77px;
+		z-index: 999999999;
+		background-color: #fff;
+		animation: grow .7s;
+		-o-animation: grow .7s;
+		-moz-animation: grow .7s;
+		-webkit-animation: grow .7s;
+		box-shadow: 0 0 50px rgba(#000, .4);
+
+		.top-box {
+			display: none;
+		}
+
+		.container {
+			.row {
+				@extend .transition;
+				padding: 20px 0;
+				overflow: hidden;
+				margin-left: 0 !important;
+				position: inherit !important;
+			}
+		}
+	}
+
+	&.ha-hidding{
+		@extend .transition;
+		top: 0;
+		position: fixed;
+		background: #fff;
+		z-index: 9999999999999;
+		
+		.top-box {
+			display: none;
+		}
+	}
+
+	&.ha-hide{
+		top: -100%;
+	}
+}

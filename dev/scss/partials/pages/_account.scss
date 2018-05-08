@@ -1,0 +1,312 @@
+  /* ==========================================================================
+   Minha Conta
+   ========================================================================== */
+
+body.account {
+
+	.modal-backdrop{
+		display: none;
+	}
+
+    #form-submit,
+    #profile-submit {
+        @include font-size(1.4);
+        float: right;
+        height: 30px;
+        margin-top: 5px;
+        line-height: 10px;
+        padding: 10px 20px;
+        background-color: #fff;
+        color: #000 !important;
+    }
+
+	main{
+	    background-color: #f0f0f0;
+	    overflow: hidden;
+	    padding: 5% 0 15%;
+
+		@include mq($screen-md) {
+			padding: 3% 0 5%;
+		}
+
+		.container{
+			padding: 0 10px;
+
+			.row {
+				width: 100%;
+				margin: 0;
+			}
+
+			h3{
+				@include font-size(2);
+				color: #333;
+				font-weight: bolder;
+				margin: 20px 0;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	.profile-detail-display,
+	.address-display-block{
+		@extend .col-xs-12;
+		@include font-size(1.3);
+		background-color: #fff;
+		padding: 20px 40px;
+		margin-top: 20px;
+
+		@include mq($screen-md) {
+			margin-top: 0;
+			width: 48%;
+			margin-right: 2%;
+			min-height: 370px;
+			margin-bottom: 60px;
+		}
+
+		h5{
+			display: none;
+		}
+
+		h4 {
+			@include font-size(1.8);
+			color: #333;
+			font-weight: 900;
+			margin: 40px 0 20px;
+			text-transform: uppercase;
+		}
+
+		h5,
+		.profile-detail-display-email {
+			@include font-size(1.3);
+			margin-bottom: 0;
+			font-weight: normal;
+		}
+
+		.title,
+		.data{
+			@include font-size(1.3);
+			border: none;
+			font-weight: normal !important;
+		}
+
+		.new-address-link{
+			margin-top: 0;
+		}
+	}
+
+	.profile-detail-display-info,
+	.address-display-unit-info { line-height: 1.5; }
+
+	.edit-address-link {
+		margin: 40px 0 15px;
+		color: #000;
+
+		a {
+			@include font-size(0.9);
+
+			&.delete {
+				color: #939598;
+				font-weight: 400;
+				background: none;
+			}
+
+			@include mq($screen-sm) {
+				@include font-size(1.2);
+			}
+		}
+	}
+
+	.edit-profile-link,
+	.new-address-link{
+		margin: 15px 0;
+		overflow: hidden;
+	}
+
+	[data-toggle="modal"] {
+		@extend .transition;
+		@include font-size(1.4);
+		text-decoration: none;
+		background-image: none;
+		display: inline-block;
+		text-align: center;
+		line-height: 30px;
+		padding: 4px 20px;
+		text-align: center;
+		text-transform: lowercase;
+		border: 1px solid #2e2b3e;
+		background-color: #2e2b3e;
+		color: #fff;
+
+		// &:hover{
+		// 	background-color: #fff;
+		// 	border: 1px solid #2e2b3e;
+		// 	color: #2e2b3e;
+		// }
+
+		&.delete{
+			border: none;
+		}
+	}
+
+	.data { font-weight: 300; }
+
+	.modal {
+		@include font-size(1.2);
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		width: 100%;
+		height: 100%;
+		display: none;
+		background: rgba(#000, .6);
+
+		form {
+			position: absolute;
+		    top: 0;
+		    left: 50%;
+		    width: 100%;
+		    max-width: 390px;
+		    margin-left: -160px;
+
+		    @media screen and (min-width:414px) {
+				margin-left: -195px;
+			}
+		}
+
+		&-header {
+			flex-direction: row-reverse;
+			align-items: center;
+			height: 58px;
+			padding: 0 15px;
+			background-color: #fff;
+
+			h3 {
+				color: #000;
+				flex: 1;
+				margin: 0;
+				padding-top: 20px;
+				display: block;
+				font: {
+					size: 1.6em;
+				}
+			}
+
+			.close {
+				color: #000;
+				float: right;
+				width: 28px;
+				height: 35px;
+				margin-top: 8px;
+				padding: 0;
+				border: 0;
+				font-size: 40px;
+				cursor: pointer;
+				background: {
+					color: transparent;
+					repeat: no-repeat;
+					position: center;
+				}
+			}
+		}
+
+		&-body {
+			background-color: #e6e6e6;
+			padding: 15px;
+			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+
+			.dropdown-icon{
+				display: none;
+			}
+
+			@include mq($screen-xs - 1, true) {
+				height: calc(100vh - 90px - 70px);
+			}
+
+			.profile-detail-form-personal-data h5 { margin-top: 10px; }
+
+			h5 {
+				display: none;
+			}
+
+			.control-group {
+				margin-bottom: 1em;
+				font-size: 13px;
+
+				label { display: inline-block; }
+
+				select{
+					margin-top: 5px;
+				}
+
+				input {
+					&:not([type="radio"]) {
+						font-size: 12px;
+						display: block;
+						width: 100%;
+						height: 30px;
+						padding: 0 10px;
+						border: none;
+						border-radius: 0;
+						margin-top: 5px;
+						transition-duration: .2s;
+						transition-timing-function: ease;
+						transition-property: padding, border-color;
+						appearance: none;
+
+						&:focus { border-color: #000; }
+
+						@include mq($screen-sm) {
+							height: 35px;
+						}
+					}
+				}
+			}
+
+			.form-personal-data-gender .controls label {
+				position: relative;
+				margin-top: .5em;
+				padding-right: 20px;
+			}
+
+			#business-toggle {
+				display: none;
+			}
+		}
+
+		&-footer {
+			flex-direction: row-reverse;
+			height: 58px;
+			padding: 15px;
+			border: 0;
+			color: #000;
+			background-color: #fff;
+
+			.btn {
+				font-size: 13px;
+				padding: 8px 30px;
+				border: none;
+				appearance: none;
+				cursor: pointer;
+				text-align: center;
+				text-transform: lowercase;
+				background-color: #e6e6e6;
+				color: #000;
+			}
+
+			.btn-link {
+				font-size: 13px;
+				display: inline-block;
+				margin: 0 15px;
+				padding: 7px 20px;
+				color: #000;
+				border: 1px solid #e6e6e6;
+				background: transparent;
+				text-transform: lowercase;
+				appearance: none;
+				cursor: pointer;
+			}
+		}
+	}
+}

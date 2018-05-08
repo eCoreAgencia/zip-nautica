@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+	<head>
+        <title>Fale Conosco | Zip Nautica</title>
+        <vtex:metaTags/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <vtex:template id="ZIP-COMMONSTYLES" />
+		<script type="text/javascript" src="/arquivos/contact.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var storeName = "zipnautica"; //Indica o nome da conta utilizada na API do MasterData
+				var dataEntity = "CO"; //Indica a sigla da entidade de dados utilizada na API do MasterData
+				var htmlElementId = "contactForm"; //Indica o ID do elemento HTML que receberá o formulário
+				var messageLoading = "Carregando..."; //Mensagem de carregamento do formulário (ao salvar)
+				var messageValidation = "Preencha corretamente todos os campos obrigatórios do formulário."; //Mensagem de validação de formulário
+				var messageSuccess = "Contato realizado com sucesso! Em breve nossa equipe entrará em contato com você. Obrigado."; //Mensagem de sucesso
+				var messageError = "Algum erro aconteceu. Tente novamente mais tarde."; //Mensagem de erro
+				FormCreate(storeName, dataEntity, htmlElementId, messageLoading, messageValidation, messageSuccess, messageError);
+			});
+		</script>
+	</head>
+	<body>
+
+		<vtex:template id="ZIP-HEADER" />
+
+		<main>
+			<div class="container">
+				<div class="row">
+					<section class="content col-xs-12">
+						<article>
+							<div class="franqueado">
+								<h2>Seja um franqueado</h2>
+								<p>As unidades da ZIP NAUTICA mantêm um portfólio com mais de 200 itens de roupas masculinas (adulto / infantil).
+								A Franqueadora mantém acordos comerciais exclusivos com fornecedores homologados para garantir o mix de produtos certificados com o mais alto grau de qualidade e pontualidade no atendimento a uma demanda de público especial que busca pelo melhor serviço.</p>
+
+								<h3>Benefícios aos Franqueados:</h3>
+
+								<ul>
+									<li>Experiência na gestão de lojas;</li>
+									<li>Assessoria na localização e definição do ponto comercial;</li>
+									<li>Projeto arquitetônico e ambientação do local;</li>
+									<li>Sistema informatizado de administração de caixa;</li>
+									<li>Planejamento estratégico de Marketing e ações promocionais;</li>
+									<li>Comunicação institucional;</li>
+									<li>Equipe de treinamento e supervisão para o proprietário e seus funcionários;</li>
+									<li>Assessoria financeira e administrativa;</li>
+								</ul>
+
+								<p>Para mais informações, entre em contato conosco! Preencha o formulário abaixo caso queria se tornar um franqueado e aguarde nosso contato.</p>
+							</div>
+							<h2>Fale conosco</h2>
+							<div id="contactForm"></div>
+						</article>
+					</section>
+				</div>
+			</div>
+		</main><!-- main END -->
+
+        <vtex:template id="ZIP-FOOTER" />
+
+        <vtex:template id="ZIP-COMMONSCRIPTS" />
+    </body>
+</html>

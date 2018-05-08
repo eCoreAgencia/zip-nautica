@@ -1,0 +1,880 @@
+
+/* ==========================================================================
+   Página de Produto
+   ========================================================================== */
+
+body.produto {
+
+    main{
+        overflow: hidden;
+        margin-top: 4%;
+
+        .product-view{
+            overflow: hidden;
+            margin: 20px 0 40px;
+            clear: both;
+
+            .product-box {
+                position: relative;
+
+                .apresentacao {
+                    #include {
+                        @include mq($screen-md) {
+                            padding-left: 118px;
+                        }
+
+                        a {
+                            display: block;
+                        }
+
+                        .sku-rich-image-main {
+                            display: block;
+                            margin: 0 auto;
+                            width: 100%;
+
+                            @include mq($screen-md) {
+                                width: auto;
+                            }
+                        }
+                    }
+
+                    .zoomPad {
+                        overflow: hidden;
+                        position: relative;
+                        text-align: center;
+
+                        .zoomWindow {
+                            display: none;
+
+                            .zoomWrapperImage {
+                                display: none;
+                            }
+                            
+                            @include mq($screen-md) {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                left: 0 !important;
+                                background: none repeat scroll 0 0 #fff;
+                                
+                                .zoomWrapperImage {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+
+                    .thumbs {
+                        margin-top: 10px;
+                        text-align: center;
+                        overflow: hidden;
+
+                        @include mq($screen-md) {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 530px;
+                        }
+
+                        li {
+                            margin: 0 5px 10px;
+                            display: inline-block;
+
+                            @include mq($screen-md) {
+                                display: block;
+                                margin: 0 0 5px;
+                            }
+
+                            &:hover{
+                                opacity: 0.8;
+                            }
+
+                            a{
+                                &.ON{
+                                    img{
+                                        opacity: 0.8;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .buy-box{
+                overflow: hidden;
+
+                @include mq($screen-md) {
+                    padding-left: 5%;
+                }
+
+                .productName{
+                    @include font-size(2.4);
+                    font-weight: bolder;
+                    color: #333;
+                    text-transform: uppercase;
+                    height: 50px;
+                    overflow: hidden;
+                }
+
+                .productReference{
+                    color: #757575;
+                    border-bottom: 1px solid #dbd7d7;
+                    line-height: 20px;
+                    margin-bottom: 10px;
+                    font-weight: 900;
+                    padding-bottom: 10px;
+
+                    &:before{
+                        content: "cód:";
+                        display: inline-block;
+                        margin-right: 5px;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .price-flag-table{
+                    clear: both;
+                    border-bottom: 1px solid #dbd7d7;
+                    margin-bottom: 10px;
+                    overflow: hidden;
+                    padding-bottom: 10px;
+
+                    .price-info{
+                        padding: 0;
+
+                        .productPrice{
+                            .descricao-preco{
+                                .valor-de{
+                                    @include font-size(1.2);
+                                    text-decoration: line-through;
+                                    font-style: normal;
+                                    color: #757575;
+                                }
+
+                                .valor-por{
+                                    @include font-size(0);
+                                    font-weight: bolder;
+                                    font-style: normal;
+                                    display: none;
+                                    color: #333;
+                                    margin-bottom: 5px;
+
+                                    .skuBestPrice{
+                                        @include font-size(3.6);
+                                        display: block;
+                                        font-weight: 900;
+                                    }
+                                }
+
+                                .valor-dividido{
+                                    @include font-size(2.4);
+                                    font-style: normal;
+                                    text-transform: uppercase;
+                                    font-weight: normal;
+                                    color: #333;
+
+                                    label, strong{
+                                        font-weight: 900;
+                                    }
+                                }
+                            }
+
+                            .preco-a-vista{
+                                display: none !important;
+                            }
+
+                            .economia-de{
+                                display: none !important;
+                            }
+                        }
+                    }
+
+                    .flag-table-info{
+                        span.tabela{
+                            text-decoration: underline;
+                            color: #2e2b3e;
+                            cursor: pointer;
+                        }
+
+                        .flag{
+                            background-color: #2e2b3e;
+                            color: #ffcb3a;
+                            font-weight: 900;
+                            padding: 10px;
+                            text-transform: uppercase;
+                            font-size: 12px;
+                            margin-bottom: 10px;
+                            width: auto;
+                            display: block;
+                            text-align: center;
+                            width: 30%;
+                        }
+                    }
+                }
+
+                .choose-skus{
+                    overflow: hidden;
+                    margin: 20px 0;
+                    clear: both;
+                    border-bottom: 1px solid #dbd7d7;
+
+                    .sku-selector-container{
+                        ul{
+                            list-style-type: none;
+                            width: 100%;
+                            display: block;
+
+                            @include mq($screen-md) {
+                                display: inline-block;
+                                width: 50%;
+                                vertical-align: top;
+                            }
+
+                            li{
+                                @include font-size(1.4);
+                                text-transform: uppercase;
+                                font-weight: bolder;
+                                display: block;
+                                overflow: hidden;
+                                margin-bottom: 10px;
+
+                                &.skuList{
+                                    input{
+                                        display: none;
+                                    }
+
+                                    label{
+                                        cursor: pointer;
+                                        background-color: #fff;
+                                        padding: 10px 15px;
+                                        color: #201e1e;
+                                        margin-right: 10px;
+                                        text-align: center;
+                                        line-height: 25px;
+                                        border: 1px solid #fff;
+                                        display: inline-block;
+                                        margin-bottom: 10px;
+
+                                        &:hover,
+                                        &.sku-picked{
+                                            border: 1px solid #000;
+                                        }
+
+                                        &:before{
+                                            display: none;
+                                        }
+
+                                        &.item_unavailable{
+                                            background-color: #e6e6e6;
+                                            border: 1px solid #e6e6e6;
+                                            position: relative;
+
+                                            &:after{
+                                                content: "X";
+                                                display: block;
+                                                position: absolute;
+                                                top: 6px;
+                                                left: 24%;
+                                                font-size: 39px;
+                                                font-weight: 500;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.Tamanho{
+                                li.skuList{
+                                    label{
+                                        width: auto;
+                                        height: 40px;
+                                        line-height: 20px;
+                                    }
+                                }
+                            }
+
+                            &.Cor{
+                                li.skuList{
+                                    label{
+                                        font-size: 0;
+                                        width: 40px;
+                                        height: 40px;
+                                        border: 1px solid transparent;
+
+                                        &.skuespec_Amarelo{
+                                            background-color: #FCBB23;
+                                        }
+
+                                        &.skuespec_Azul{
+                                            background-color: #0000ff;
+                                        }
+
+                                        &.skuespec_Azul_Claro{
+                                            background-color: #658EBC;
+                                        }
+
+                                        &.skuespec_Azul_Marinho{
+                                            background-color: #0F1D42;
+                                        }
+
+                                        &.skuespec_Bege{
+                                            background-color: #E2CFAE;
+                                        }
+
+                                        &.skuespec_Branco{
+                                            background-color: #fff;
+                                            border: 1px solid #ccc;
+                                        }
+
+                                        &.skuespec_Bronze{
+                                            background-color: #895837;
+                                        }
+
+                                        &.skuespec_Caqui{
+                                            background-color: #856D41;
+                                        }
+                                        
+                                        &.skuespec_Caramelo{
+                                            background-color: #D0822F;
+                                        }
+
+                                        &.skuespec_Castanho{
+                                            background-color: #3E2101;
+                                        }
+
+                                        &.skuespec_Chocolate{
+                                            background-color: #57362F;
+                                        }
+
+                                        &.skuespec_Cinza{
+                                            background-color: #6B6B6B;
+                                        }
+
+                                        &.skuespec_Creme{
+                                            background-color: #6B6B6B;
+                                        }
+
+                                        &.skuespec_Estampado{
+                                            background-color: #844345;
+                                        }
+
+                                        &.skuespec_Laranja{
+                                            background-color: #F73C07;
+                                        }
+
+                                        &.skuespec_Lilas{
+                                            background-color: #9D8DCB;
+                                        }
+
+                                        &.skuespec_Limao{
+                                            background-color: #48F86D;
+                                        }
+
+                                        &.skuespec_Madeira{
+                                            background-color: #644B35;
+                                        }
+
+                                        &.skuespec_Marfim{
+                                            background-color: #E0B370;
+                                        }
+
+                                        &.skuespec_Marrom{
+                                            background-color: #301701;
+                                        }
+
+                                        &.skuespec_Ocre{
+                                            background-color: #272725;
+                                        }
+
+                                        &.skuespec_Ouro{
+                                            background-color: #BE9B47;
+                                        }
+
+                                        &.skuespec_Prata{
+                                            background-color: #76757B;
+                                        }
+
+                                        &.skuespec_Preto{
+                                            background-color: #000;
+                                        }
+
+                                        &.skuespec_Rosa{
+                                            background-color: #F968A9;
+                                        }
+
+                                        &.skuespec_Roxo{
+                                            background-color: #8756A1;
+                                        }
+
+                                        &.skuespec_Salmao{
+                                            background-color: #FD7360;
+                                        }
+
+                                        &.skuespec_Tangerina{
+                                            background-color: #E8740D;
+                                        }
+
+                                        &.skuespec_Turquesa{
+                                            background-color: #24C7B1;
+                                        }
+
+                                        &.skuespec_Verde{
+                                             background-color: #4ED1C3;
+                                        }
+
+                                        &.skuespec_Vermelho{
+                                            background-color: #E45049;
+                                        }
+
+                                        &.skuespec_Vinho{
+                                            background-color: #630015;
+                                        }
+
+                                        &.skuespec_Violeta{
+                                            background-color: #BA2161;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .qtd-frete{
+                    clear: both;
+                    border-bottom: 1px solid #dbd7d7;
+                    margin-bottom: 10px;
+                    overflow: hidden;
+                    padding-bottom: 25px;
+
+                    .frete{
+                        position: relative;
+                        overflow: hidden;
+
+                        svg{
+                            @include font-size(1.4);
+                            display: inline-block;
+                            vertical-align: middle;
+                            text-transform: uppercase;
+                            font-weight: bolder;
+                            color: #333;
+                            overflow: hidden;
+                        }
+
+                        &:after{
+                            @include font-size(1.4);
+                            content: "Calcule o seu frete:";
+                            position: absolute;
+                            text-transform: uppercase;
+                            font-weight: bolder;
+                            color: #333;
+                            top: 7px;
+                            left: 48px;
+                        }
+
+                        #popupCalculoFreteWrapper{
+                            display: none;
+                        }
+
+                        #calculoFrete{
+                            .header,
+                            .footer{
+                                display: none;
+                            }
+
+                            #ctl00_Conteudo_upnlContent{
+                                .prefixo{
+                                    font-size: 0;
+                                    display: inline-block;
+                                    width: 78%;
+                                    margin: 0;
+                                    vertical-align: top;
+
+                                    input{
+                                        @include font-size(1.4);
+                                        display: block;
+                                        padding: 8px;
+                                        width: 100%;
+                                    }
+                                }
+
+                                .quantity{
+                                    display: none;
+                                }
+
+                                .frete-calcular{
+                                    width: 20%;
+                                    display: inline-block;
+                                    margin: 0;
+                                    vertical-align: top;
+
+                                    input{
+                                        padding: 10px;
+                                        background-color: #333;
+                                        text-transform: uppercase;
+                                        text-align: center;
+                                        border: none;
+                                        color: #fff;
+                                        width: 100%;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .cep-busca{
+                                    a{
+                                        text-transform: lowercase;
+                                        color: #333;
+                                        font-size: 13px;
+                                        margin-top: 5px;
+                                        display: block;
+                                    }
+                                }
+
+                                .freight-values{
+                                    table{
+                                        width: 100%;
+                                        display: block;
+                                        margin-top: 10px;
+                                        border: 1px solid #ccc;
+                                        padding: 5px;
+
+                                        thead{
+                                            background-color: #F0F0F0;
+                                            width: 100%;
+
+                                            tr{
+                                                th{
+                                                    @include font-size(1.2);
+                                                    padding: 5px;
+                                                    text-align: center;
+                                                }
+                                            }
+                                        }
+
+                                        tbody{
+                                            tr{
+                                                td{
+                                                    @include font-size(1.2);
+                                                    padding: 5px;
+                                                    text-align: center;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .qtd{
+                        span{
+                            @include font-size(1.4);
+                            text-transform: uppercase;
+                            font-weight: bolder;
+                            display: block;
+                            overflow: hidden;
+                            margin-bottom: 7px;
+                            line-height: 26px;
+                            color: #2e2b3e;
+                        }
+
+                        .quantidade{
+                            border: 1px solid #c1c1c1;
+                            padding: 5px;
+
+                            i, input{
+                                @include font-size(1.8);
+                                text-transform: uppercase;
+                                font-weight: bolder;
+                                display: inline-block;
+                                font-style: normal;
+                                border: none;
+                                width: 33.3%;
+                                background-color: transparent;
+                                text-align: center;
+                            }
+
+                            i{
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+
+                .vantagens{
+                    clear: both;
+                    overflow: hidden;
+                    padding: 12px 0;
+
+                    ul{
+                        li{
+                            display: inline-block;
+                            width: 50%;
+                            vertical-align: top;
+
+                            svg, span{
+                                display: inline-block;
+                                vertical-align: middle;
+                            }
+
+                            span{
+                                text-transform: uppercase;
+                                font-weight: 900;
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+
+                .wish-buy{
+                    .wishlist-box{
+                        .wishlist-button{
+                            background-color: #2e2b3e;
+                            width: 100%;
+                            display: block;
+                            text-align: center;
+                            color: #fff;
+                            text-transform: uppercase;
+                            font-weight: 900;
+                            padding: 9px;
+                            cursor: pointer;
+                            border: none;
+
+                            svg{
+                                display: inline-block;
+                                vertical-align: middle;
+                            }
+
+                            &:after{
+                                @include font-size(1.6);
+                                font-family: 'Cairo', sans-serif;
+                                content: "Lista de desejos";
+                                display: inline-block;
+                                vertical-align: middle;
+                                color: #fff;
+                                text-transform: uppercase;
+                                font-weight: 700;
+                                margin-left: 8px;
+                            }
+                        }
+                    }
+
+                    .compra-box{
+                        .buy-button{
+                            @include font-size(1.8);
+                            background-color: #009f3c;
+                            width: 100%;
+                            display: block;
+                            text-align: center;
+                            color: #fff;
+                            text-transform: uppercase;
+                            font-weight: 900;
+                            padding: 15px;
+                            text-decoration: none;
+                        }
+
+                        .portal-notify-me-ref{
+                            h3{
+                                display: none;
+                            }
+                            
+                            p{
+                                font-size: 13px;
+                                display: block;
+                                margin: 5px 0;
+                            }
+
+                            input.sku-notifyme-client-name{
+                                display: none !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .product-info{
+            clear: both;
+            overflow: hidden;
+
+            h3{
+                @include font-size(3.6);
+                display: block;
+                text-transform: uppercase;
+                margin-bottom: 25px;
+                font-weight: 900;
+                color: #2e2b3e;
+                margin-bottom: 30px;
+            }
+
+            .description{
+                @include mq($screen-md) {
+                    padding-right: 5%;
+                }
+
+                .productDescription{
+                    @include font-size(1.5);
+                    text-transform: unset;
+                    line-height: 20px;
+                }
+            }
+
+            .specification{
+                #caracteristicas{
+                    h4{
+                        display: none;
+                    }
+
+                    table{
+                        width: 100%;
+
+                        tbody{
+                            tr{
+                                th, td{
+                                    text-align: left;
+                                    width: 50%;
+                                    padding: 10px;
+                                }
+
+                                &.even{
+                                    background-color: #F0F0F0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .shelfRelacionados{
+            overflow: hidden;
+            clear: both;
+            margin-top: 60px;
+            padding-bottom: 60px;
+
+            .prateleira{
+                h2{
+                    @include font-size(3.6);
+                    display: block;
+                    text-transform: uppercase;
+                    font-weight: bolder;
+                    color: #2e2b3e;
+                }
+
+                ul{
+                    li{
+                        width: 100%;
+
+                        @include mq($screen-sm) {
+                            width: 49%;
+                        }
+
+                        @include mq($screen-md) {
+                            width: 23%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.conteudo-tabela{
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+#popup-wrapper{
+    @extend .transition;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    z-index: 9999999;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,.3);
+
+    .popup{
+        width: 95%;
+        padding: 40px;
+        background: #fff;
+        max-width: 500px;
+        text-align: center;
+        position: relative;
+        box-shadow: 1px 0px 5px 0px #6f6f6f;
+
+        button{
+            @extend .transition;
+            color: #666;
+            cursor: pointer;
+
+            &[name="close-popup"]{
+                $size: 25px;
+                @extend .transition;
+                @include font-size(0);
+                top: 2px;
+                border: 0;
+                right: 2px;
+                padding: 0;
+                width: $size;
+                height: $size;
+                cursor: pointer;
+                background: none;
+                position: absolute;
+
+                &:before,&:after{
+                    @extend .transition;
+                    top: 50%;
+                    left: 50%;
+                    content: '';
+                    height: 5px;
+                    width: $size;
+                    display: block;
+                    position: absolute;
+                    background: #838383;
+                }
+
+                &:before{
+                    transform: translate(-50%, -50%) rotate(45deg);
+                }
+
+                &:after{
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+
+                &:hover{
+                    &:before, &:after{
+                        background-color: #2e2b3e;
+                    }
+                }
+            }
+        }
+        
+        button[name="logIn"], a.logIn{
+            @extend .transition;
+            @include font-size(1.9);
+            color: #838383;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            &:hover{
+                color: #2e2b3e;
+            }
+        }
+
+        p{
+            @include font-size(1.6);
+            color: #666666;
+            padding: 20px 0;
+            line-height: 18px;
+        }
+    }
+}

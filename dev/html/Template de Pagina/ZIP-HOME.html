@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="en-us">
+
+<head>
+    <title>Home | Zip Nautica</title>
+    <vtex:metaTags/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <vtex:template id="ZIP-COMMONSTYLES" />
+</head>
+<body>
+
+    <vtex:template id="ZIP-HEADER" />
+
+    <main>
+        <section class="banners-top">
+            <div class="slider slide-wrap">
+                <div class="slide">
+                    <vtex:contentPlaceHolder id="banners-slide" />
+                </div>
+            </div>
+        </section>
+
+        <vtex:template id="ZIP-TIPBAR" />
+
+        <section class="banners-secundarios">
+            <div class="row">
+                <div class="col-xs-12 col-md-8">
+                    <vtex:contentPlaceHolder id="banner-sec-one" />
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <vtex:contentPlaceHolder id="banner-sec-two" />
+                </div>
+            </div>
+        </section>
+
+        <section class="news-shelf">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-3 banner-news">
+                        <vtex:contentPlaceHolder id="banner-novidades" />
+                    </div>
+                    <div class="col-xs-12 col-md-9 shelf-news">
+                        <vtex:contentPlaceHolder id="shelf-home" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="banners-bottom">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <vtex:contentPlaceHolder id="banner-bottom-one" />
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <vtex:contentPlaceHolder id="banner-bottom-two" />
+                </div>
+            </div>
+        </section>
+
+        <div class="favorite-fixed hidden-xs hidden-sm">
+            <a href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 510 510"><path d="M255 489.6l-35.7-35.7C86.7 336.6 0 257.55 0 160.65 0 81.6 61.2 20.4 140.25 20.4c43.35 0 86.7 20.4 114.75 53.55C283.05 40.8 326.4 20.4 369.75 20.4 448.8 20.4 510 81.6 510 160.65c0 96.9-86.7 175.95-219.3 293.25L255 489.6z" fill="#FFF"/></svg>
+                <span>Ver lista de desejos</span>
+            </a>
+        </div>
+    </main>
+
+    <vtex:template id="ZIP-FOOTER" />
+    <vtex:template id="ZIP-COMMONSCRIPTS" />
+    <script type="text/javascript" src="/arquivos/slick.js"></script>
+
+</body>
+
+</html>

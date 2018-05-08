@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Searchform
+   ========================================================================== */
+
+.js-open-mobile-search{
+	border: none;
+	background-color: transparent;
+	padding-top: 20px;
+}
+
+.searchbox{
+	padding-top: 28px;
+	text-align: right;
+	display: none;
+
+	@include mq($screen-md) {
+		display: block;
+	}
+
+	&.active{
+		position: absolute;
+	    right: 0;
+	    top: 70px;
+	    width: 100%;
+	    z-index: 999999999;
+	    background-color: #fff;
+	    padding: 5px;
+	}
+
+	.busca{
+		position: relative;
+
+		legend,
+		label,
+		select{
+			display: none;
+		}
+
+		input{
+			&.fulltext-search-box{
+				@include font-size(1.2);
+				font-family: 'Cairo', sans-serif;
+				height: 30px;
+				padding: 10px;
+				border: none;
+				width: 100%;
+				color: #2e2b3e;
+				border: 1px solid #2e2b3e;
+				background-color: transparent;
+			}
+
+			&.btn-buscar{
+			    right: 5px;
+				width: 16px;
+			    height: 16px;
+				border: none;
+			    font-size: 0;
+			    cursor: pointer;
+			    position: absolute;
+			    top: 7px;
+				background: url(/arquivos/search.png) no-repeat 0 0 transparent;
+			}
+		}
+	}
+}

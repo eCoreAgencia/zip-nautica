@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Tipbar
+   ========================================================================== */
+
+.tipbar{
+	overflow: hidden;
+	background-color: #f8d057;
+	padding: 5px 0;
+
+	nav{
+		ul{
+			li{
+				display: inline-block;
+				width: 33.33%;
+				vertical-align: top;
+				text-align: center;
+
+				@include mq($screen-md){
+					text-align: left;
+					vertical-align: middle;
+					padding: 10px 0;
+				}
+
+				svg{
+					width: 100px;
+					margin-bottom: 3px;
+
+					@include mq($screen-md){
+						display: inline-block;
+						vertical-align: middle;
+						margin-bottom: 0;
+						width: auto;
+					}
+				}
+
+				span{
+					@include font-size(1.1);
+					color: #093d62;
+					display: block;
+					text-transform: uppercase;
+					font-weight: 600;
+
+					@include mq($screen-md){
+						@include font-size(1.7);
+						padding-left: 10px;
+						display: inline-block;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+	}
+}

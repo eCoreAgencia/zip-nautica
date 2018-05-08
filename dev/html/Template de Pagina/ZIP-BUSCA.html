@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+	<head>
+		<title><vtex.cmc:searchTitle /> | Zip Náutica</title>
+		<vtex:metaTags/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<vtex:template id="ZIP-COMMONSTYLES" />
+	</head>
+	<body>
+
+        <vtex:template id="ZIP-HEADER" />
+
+        <main>
+        	<div class="container">
+                <div class="row">
+	          		<section class="mainShelf col-xs-12">
+	          			<h3 class="tlt-shelf">Resultado da busca:</h3>
+			            <vtex.cmc:searchResult layout="ef3fcb99-de72-4251-aa57-71fe5b6e149f" itemCount="16" columnCount="16" />
+			        </section>
+                </div>
+        	</div>
+        </main>
+
+        <vtex:template id="ZIP-FOOTER" />
+		<vtex:template id="ZIP-COMMONSCRIPTS" />
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.orderBy').first().appendTo('#nav-dep .right');
+			});
+		</script>
+	</body>
+</html>

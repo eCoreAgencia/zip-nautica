@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+@-ms-viewport { width: device-width; }
+
+/*
+Dependencies
+========================================================================== */
+
+@import "partials/base/mixins";
+@import "resetv2";
+@import "partials/all";
+
+/*
+Base Style
+========================================================================== */
+
+@import url('https://fonts.googleapis.com/css?family=Cairo:300,400,600,700');
+
+@include mq($screen-sm) {
+	*:focus { outline: none !important; }
+}
+
+html {
+	min-height: 100%;
+	box-sizing: border-box;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	font-family: 'Cairo', sans-serif;
+}
+
+* { box-sizing: inherit; }

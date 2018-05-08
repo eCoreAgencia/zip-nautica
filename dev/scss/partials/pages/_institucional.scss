@@ -1,0 +1,272 @@
+/* ==========================================================================
+   Institucional
+   ========================================================================== */
+
+body.institucional {
+
+    main{
+        overflow: hidden;
+        margin-top: 4%;
+
+		.content {
+			@include font-size(1.4);
+		    margin-bottom: 100px;
+		    color: #272123;
+		    padding: 0 20px;
+		    line-height: 22px;
+		    margin-top: 20px;
+
+		    @include mq($screen-md) {
+		    	padding: 0;
+		    }
+
+		    p{
+		    	@include font-size(1.6);
+				text-decoration: none;
+				color: #000;
+				text-decoration-line: none;
+				line-height: 20px;
+				font-weight: 500;
+				margin-bottom: 20px;
+				display: block;
+		    }
+
+		    img{
+		    	margin-top: 30px;
+	    	}
+
+		    h2{
+			    @include font-size(2.8);
+			    margin: 20px 0;
+			    text-transform: uppercase;
+		    }
+
+		    h3,h4{
+				@include font-size(1.8);
+				font-weight: 700;
+				margin: 25px 0;
+				text-transform: uppercase;
+		    }
+
+		    span{
+				@include font-size(1.3);
+				line-height: 17px;
+				color: #000;
+		    }
+
+		    div#contactForm{
+				.cl_first_name,
+				.cl_email,
+				.cl_home_phone,
+				.co_type,
+				.cl_assunto{
+					@include font-size(1.3);
+					width: 100%;
+					margin: 10px auto;
+
+					input{
+				 		display: block;
+				 		width: 100%;
+				 		height: 27px;
+					}
+
+					label{
+						margin-bottom: 5px;
+						display: block;
+					}
+				}
+
+				select#co_type{
+					width: 100%;
+					height: 30px;
+				}
+
+				.co_description {
+					@include font-size(1.5);
+				    margin-top: 25px;
+
+				    textarea{
+						width: 100%;
+						height: 80px;
+						display: block;
+				    }
+
+					label{
+						margin-bottom: 5px;
+						display: block;
+					}
+				}
+
+				input#commit {
+					@include font-size(1.6);
+				    margin: 10px 0;
+				    width: 100px;
+				    background-color: #272123;
+				    border: none;
+				    color: #fff;
+				    text-transform: uppercase;
+				    padding: 10px 0;
+				    text-align: center;
+				    font-weight: bolder;
+				    cursor: pointer;
+				}
+
+				@include mq($screen-md) {
+					form#co_form{
+						.cl_first_name,
+						.cl_email,
+						.cl_home_phone{
+							@include font-size(1.5);
+							width: 27%;
+							display: inline-block;
+							margin-right: 25px;		
+		    				margin-top: 20px;
+
+							input{
+							    display: block;
+								height: 30px;
+								width: 235px;
+							}
+
+							label{
+								margin-bottom: 5px;
+								display: block;
+							}
+						}
+
+						select#co_type{
+							height: 30px;
+							width: 235px;
+						}
+
+						.co_type,
+						.cl_assunto{
+							@include font-size(1.5);
+							width: 27%;
+							display: inline-block;
+							margin-right: 25px;
+							margin-top: 20px;
+
+							input{
+							    display: block;
+								height: 30px;
+								width: 235px;
+							}
+						}
+
+						.co_description {
+							@include font-size(1.5);
+						    margin-top: 25px;
+
+						    textarea{
+								width: 80%;
+								height: 80px;
+								display: block;
+						    }
+
+							label{
+								margin-bottom: 5px;
+								display: block;
+							}
+						}
+
+						textarea{
+							resize: none;
+						}
+					}
+				}
+			}
+		}
+
+		ul{
+			display: block;
+			margin-bottom: 20px;
+			overflow: hidden;
+
+			li{
+				@include font-size(1.6);
+				list-style-type: none;
+			}
+		}
+
+		img{
+			margin-bottom: 30px;
+		}
+	}
+
+	.franqueado{
+		display: none;
+		margin-bottom: 40px;
+	}
+
+	&.seja-um-franqueado{
+		.franqueado{
+			display: block !important;
+		}
+	}
+
+	&.zip-nautica{
+
+		img{
+			width: 100%;
+			height: auto;
+
+			@include mq($screen-md) {
+				width: auto;
+			}
+		}
+
+		.txt{
+			margin-top: 3%;
+
+			@include mq($screen-md) {
+				margin-top: 6%;
+			}
+		}
+	}
+
+	&.lojas{
+		main{
+			margin-top: 0;
+
+			.content {
+				margin-top: 0;
+				padding-top: 0;
+			}
+
+			.banner-lojas{
+				img{
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+
+		.lojas-lista{
+			div{
+				@include mq($screen-md) {
+					padding-right: 8%;
+				}
+			}
+		}
+
+		.sidebar-lojas{
+			overflow-y: scroll;
+			max-height: 390px;
+
+			h3{
+				@include font-size(1.5);
+				margin: 20px 0 0;
+			}
+
+			p{
+				@include font-size(1.4);
+			}
+		}
+
+		.map-lojas{
+			padding: 0;
+			margin: 0;
+		}
+	}
+}

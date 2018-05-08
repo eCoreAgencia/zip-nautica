@@ -1,0 +1,36 @@
+@import "base/base";
+@import "base/variables";
+@import "base/responsive-utilities";
+@import "base/grid";
+
+@import "modules/header";
+@import "modules/footer";
+@import "modules/buttons";
+@import "modules/checkoutButtons";
+@import "modules/shelf";
+@import "modules/searchform";
+@import "modules/minicart";
+@import "modules/title";
+@import "modules/newsletter";
+@import "modules/autocomplete";
+@import "modules/menuPersistente";
+@import "modules/back-to-top";
+@import "modules/breadcrumb";
+@import "modules/tipbar";
+@import "modules/sidebarSearch";
+@import "modules/quickview";
+@import "modules/sidePanel";
+@import "modules/modal";
+@import "modules/modulos";
+
+@import "pages/home";
+@import "pages/product";
+@import "pages/search";
+@import "pages/brands";
+@import "pages/account";
+@import "pages/orders";
+@import "pages/404";
+@import "pages/institucional";
+@import "pages/favoritos";
+
+@import "../vendor/slick";

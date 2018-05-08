@@ -1,0 +1,16 @@
+#set($id = $product.Id)
+#set($idSku = $product.productVariantId)
+#set($uri = $product.Uri)
+#set($escapedName = $product.HtmlEscapedName)
+
+<a title="$escapedName" href="$uri" class="productShelf">
+
+    <span class="principal">$product.GetImageTag(30)</span>
+    <span class="secundario">$product.GetImageTag(30,"verso")</span>
+    
+
+    <article>
+        <a data-sku="$idSku" data-id="$product.Id" href="$product.Uri" class="btn btn-buy">Ver produto</a>
+    </article>
+
+</a>

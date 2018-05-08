@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Checkout Buttons
+   ========================================================================== */
+
+.vtexIdUI-providers-list .ng-hide {
+	display: none !important;
+}
+
+.vtexIdUI .btn-block {
+	max-width: 370px;
+
+	span {
+		color: #fff !important;
+	}
+}
+
+.vtexIdUI .btn {
+	background-image: none !important;
+	background-color: #EA4335 !important;
+}
+
+.vtexIdUI #vtexIdUI-google-plus {
+	background-image: linear-gradient(to bottom, #4285F4, #4285F4) !important;
+}
+
+.vtexIdUI #vtexIdUI-facebook {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #e1e1ea 0%, #5874b3 1%, #405689 66%, #405689 98%, #5874b3 100%) repeat scroll 0 0 !important;
+}
+
+.vtexIdUI .btn-success.vtexIdUI-send-email {
+    background-color: #5bb75b !important;
+    background-image: linear-gradient(to bottom, #62c462, #51a351) !important;
+}

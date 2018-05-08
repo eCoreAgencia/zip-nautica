@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Breadcrumb
+   ========================================================================== */
+
+.bread-crumb {
+	overflow: hidden;
+	clear: both;
+	margin-bottom: 30px;
+
+	ul {
+		li {
+			margin-right: 5px;
+			list-style-type: none;
+			display: inline-block;
+			vertical-align: middle;
+			line-height: 20px;
+
+			&:after {
+				@include font-size(1.4);
+				color: #333;
+				content: '>';
+				display: inline-block;
+				font-weight: bolder;
+				padding-left: 5px;
+				vertical-align: top;
+			}
+
+			&:first-child{
+				font-weight: 900;
+			}
+			
+			a {
+				@include font-size(1.4);
+				color: #333;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			&:last-child {
+				&:after {
+					content: '';
+				}
+			}
+		}
+	}
+}

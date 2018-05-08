@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+    <head>
+        <title><vtex.cmc:productPageTitle /> | Zip Nautica</title>
+        <vtex:metaTags/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <vtex:template id="ZIP-COMMONSTYLES" />
+        <style type="text/css">
+            body.produto main {
+                margin-top: 5px !important;
+            }
+
+            body.produto main .product-view .buy-box .productName {
+                height: auto !important;
+            }
+
+            body.produto main .product-view .buy-box .price-flag-table .flag-table-info .flag.todos {
+                display: none !important;
+            }
+
+            body.produto main .product-view .buy-box .productReference:before {
+                content: 'CÓD' !important;
+            }
+
+            body.produto main .product-info {
+                padding: 10px 0 0 !important;
+            }
+        </style>
+    </head>
+    <body>
+
+        <vtex:template id="ZIP-HEADER" />
+
+        <main>
+
+            <div class="container">
+
+                <section class="breadcrumb row">
+                    <div class="col-xs-12">
+                        <vtex.cmc:breadCrumb />
+                    </div>
+                </section>
+
+                <section class="product-view row">
+                    <section class="product-box col-xs-12 col-md-6">
+                        <vtex.cmc:ProductImage zoom="on" />
+                    </section><!-- product-box END -->
+
+                    <section class="buy-box col-xs-12 col-md-6">
+                        <vtex.cmc:productName />
+                        <vtex.cmc:productReference/>
+
+                        <div class="price-flag-table row">
+                            <div class="col-xs-12 col-md-6 price-info">
+                                <vtex.cmc:skuPrice/>
+                            </div>
+                            <div class="col-xs-12 col-md-6 flag-table-info">
+                                <vtex.cmc:HightLight/>
+                                <vtex.cmc:discountHightLight/>
+                                <span class="tabela" id="ver-tab">ver tabela de medidas</span>
+                            </div>
+                        </div>
+
+                        <div class="choose-skus">
+                            <vtex.cmc:skuRichSelection changeImage="1" />
+
+                        </div>
+
+                        <div class="qtd-frete row">
+                            <div class="col-xs-12 col-md-6 frete">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 612 612"><path d="M21.474 377.522V117.138c0-14.469 11.729-26.199 26.199-26.199h260.25c14.469 0 26.198 11.73 26.198 26.199v260.385a8.732 8.732 0 0 1-8.733 8.733H30.207a8.733 8.733 0 0 1-8.733-8.734zm210.16 89.202c0 30.01-24.329 54.338-54.338 54.338s-54.338-24.328-54.338-54.338c0-30.011 24.329-54.338 54.338-54.338s54.338 24.327 54.338 54.338zm-27.17 0c0-15.005-12.164-27.169-27.169-27.169s-27.17 12.164-27.17 27.169 12.165 27.17 27.17 27.17 27.169-12.165 27.169-27.17zm-73.969-54.339H8.733A8.733 8.733 0 0 0 0 421.118v26.495a8.733 8.733 0 0 0 8.733 8.733h97.598c2.548-17.484 11.373-32.928 24.164-43.961zm385.443 54.339c0 30.01-24.329 54.338-54.338 54.338-30.01 0-54.338-24.328-54.338-54.338 0-30.011 24.328-54.338 54.338-54.338 30.009-.001 54.338 24.327 54.338 54.338zm-27.168 0c0-15.005-12.165-27.169-27.17-27.169-15.006 0-27.169 12.164-27.169 27.169s12.164 27.17 27.169 27.17 27.17-12.165 27.17-27.17zM612 421.118v26.495a8.733 8.733 0 0 1-8.733 8.733h-70.704c-5.057-34.683-34.906-61.427-70.961-61.427-36.062 0-65.912 26.745-70.969 61.427H248.261c-2.549-17.483-11.373-32.928-24.164-43.961h134.994V162.594c0-9.646 7.82-17.466 17.466-17.466h82.445a69.86 69.86 0 0 1 57.9 30.77l53.15 78.721a69.865 69.865 0 0 1 11.962 39.094v118.672h21.253a8.733 8.733 0 0 1 8.733 8.733zm-88.592-164.483l-42.501-60.393a8.734 8.734 0 0 0-7.142-3.707H407.47a8.734 8.734 0 0 0-8.733 8.733v60.393a8.732 8.732 0 0 0 8.733 8.733h108.798c7.074 0 11.212-7.973 7.14-13.759z" fill="#2e2b3e"/></svg>
+                                <vtex.cmc:shippingValue/>
+                            </div>
+                            <div class="col-xs-12 col-md-6 qtd">
+                                <span>Quantidade</span>
+                                <div class="quantidade">
+                                   <i class="less">-</i>
+                                   <input class="prodQtd" type="text" value="1" disabled="disabled" />
+                                   <i class="more">+</i>
+                               </div>
+                            </div>
+                        </div>
+
+                        <nav class="vantagens">
+                            <ul>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 347.971 347.971" width="32" height="32"><path d="M317.309 54.367C257.933 54.367 212.445 37.403 173.98 0 135.519 37.403 90.033 54.367 30.662 54.367c0 97.405-20.155 236.937 143.317 293.604 163.484-56.666 143.33-196.198 143.33-293.604zM162.107 225.773l-47.749-47.756 21.379-21.378 26.37 26.376 50.121-50.122 21.378 21.378-71.499 71.502z" fill="#2e2b3e"/></svg>
+                                    <span>Compra 100% segura</span>
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 511.624 511.623"><g fill="#2e2b3e"><path d="M9.135 200.996h392.862v54.818c0 2.475.9 4.613 2.707 6.424 1.811 1.81 3.953 2.713 6.427 2.713 2.666 0 4.856-.855 6.563-2.569l91.365-91.362c1.707-1.713 2.563-3.903 2.563-6.565 0-2.667-.856-4.858-2.57-6.567l-91.07-91.078c-2.286-1.906-4.572-2.856-6.858-2.856-2.662 0-4.853.856-6.563 2.568-1.711 1.715-2.566 3.901-2.566 6.567v54.818H9.135c-2.474 0-4.615.903-6.423 2.712S0 134.568 0 137.042v54.818c0 2.474.903 4.615 2.712 6.423s3.949 2.713 6.423 2.713zM502.49 310.637H109.632v-54.82c0-2.474-.905-4.615-2.712-6.423-1.809-1.809-3.951-2.712-6.424-2.712-2.667 0-4.854.856-6.567 2.568L2.568 340.607C.859 342.325 0 344.509 0 347.179c0 2.471.855 4.568 2.568 6.275l91.077 91.365c2.285 1.902 4.569 2.851 6.854 2.851 2.473 0 4.615-.903 6.423-2.707 1.807-1.813 2.712-3.949 2.712-6.427V383.72H502.49c2.478 0 4.613-.899 6.427-2.71 1.807-1.811 2.707-3.949 2.707-6.427v-54.816c0-2.475-.903-4.613-2.707-6.42-1.814-1.807-3.95-2.71-6.427-2.71z"/></g></svg>
+                                    <span>Troca garantida</span>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <div class="wish-buy row">
+                            <div class="wishlist-box col-xs-12 col-md-5">
+                                <div class="bt-add-fav wishlist-button" id="favToggle"></div>
+                            </div>
+                            <div class="compra-box col-xs-12 col-md-7">
+                                <vtex.cmc:BuyButton/>
+                            </div>
+                        </div>
+                    </section><!-- buy-box END -->
+                </section><!-- product-view END -->
+
+                <section class="product-info row">
+                    <div class="description col-xs-12 col-md-6">
+                        <h3>Descrição</h3>
+                        <vtex.cmc:ProductDescription/>
+                    </div>
+                    <div class="specification col-xs-12 col-md-6">
+                        <h3>Especificação</h3>
+                        <vtex.cmc:productSpecification/>
+                    </div>
+                </section>
+
+            </div>
+            <section class="buy-togheter">
+                <vtex.cmc:BuyTogether/>
+            </section>
+
+            <section class="shelf shelfRelacionados">
+                <div class="container">
+                    <vtex:contentPlaceHolder id="shelf-quem-comprou" />
+                    <vtex:contentPlaceHolder id="shelf-relacionados" />
+                    <vtex:contentPlaceHolder id="shelf-semelhantes" />
+                </div>
+            </section><!-- shelfRelacionados END -->
+
+            <div class="favorite-fixed hidden-xs hidden-sm">
+                <a href="/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 510 510"><path d="M255 489.6l-35.7-35.7C86.7 336.6 0 257.55 0 160.65 0 81.6 61.2 20.4 140.25 20.4c43.35 0 86.7 20.4 114.75 53.55C283.05 40.8 326.4 20.4 369.75 20.4 448.8 20.4 510 81.6 510 160.65c0 96.9-86.7 175.95-219.3 293.25L255 489.6z" fill="#FFF"/></svg>
+                    <span>Ver lista de desejos</span>
+                </a>
+            </div>
+
+        </main>
+
+        <div class="modal">
+            <div class="opacity"></div>
+            <span class="close-modal">fechar</span>
+            <div class="modal-container">
+                <div class="conteudo-tabela"><vtex:contentPlaceHolder id="tabela-medidas"/></div>
+            </div>
+        </div>
+
+        <vtex:template id="ZIP-FOOTER" />
+        <vtex:template id="ZIP-COMMONSCRIPTS" />
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+            // Scripts Modal //
+                // Open Modal //
+                    $('#ver-tab').click(function() {
+                        $('.modal').fadeIn(600);
+                        $('body').addClass('modal_active');
+                    });
+                // Open Modal //
+
+                // Close Modal //
+                    $('.close-modal, .opacity').click(function() {
+                        $('.modal').fadeOut(600);
+                        $('body').removeClass('modal_active');
+                    });
+
+                    $(document).keyup(function(ev) {
+                        if (ev.keyCode == 27)
+                            $('.modal').fadeOut(600);
+                        $('body').removeClass('modal_active');
+                    });
+                // Close Modal //
+            // Scripts Modal //
+            $("head").append('<style>label.checked.sku-picked{border:1px solid black !important;}</style>');
+
+            });
+        </script>
+    </body>
+</html>
